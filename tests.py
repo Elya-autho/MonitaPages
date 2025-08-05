@@ -2,6 +2,7 @@ import pytest
 import allure
 from base_test import browser
 from pages.BasePage import BasePage, BASE_URL
+import time
 
 
 BASE_URL ="https://test.kb-monita.ru/#monitorings_exclude"
@@ -16,3 +17,5 @@ def test_get_url(browser):
 
     with allure.step("Открываем тестовую страницу"):
         base_page.get_url(BASE_URL)
+
+    time.sleep(5)
