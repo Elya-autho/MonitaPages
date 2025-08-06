@@ -1,7 +1,8 @@
 import pytest
 import allure
 from base_test import browser
-from pages.BasePage import BasePage, BASE_URL
+from pages.BasePage import BasePage
+
 import time
 
 
@@ -18,4 +19,9 @@ def test_get_url(browser):
     with allure.step("Открываем тестовую страницу"):
         base_page.get_url(BASE_URL)
 
-    time.sleep(5)
+    with allure.step("Открываем тестовую страницу"):
+        base_page.auth(tel="9085728301")
+
+
+
+    time.sleep(10)

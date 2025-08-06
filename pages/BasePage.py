@@ -1,9 +1,13 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
+from base_test import browser
+# import ExceptionPage
 import allure
 
 BASE_URL ="https://test.kb-monita.ru/#monitorings_exclude"
+
+
 
 
 class BasePage:
@@ -20,5 +24,13 @@ class BasePage:
     def get_url(self,url):
         return self.driver.get(url)
 
+    def auth(self, tel):
+        driver = self.driver
+        input_auth = driver.find_element(By.CLASS_NAME, "login-phone-number")
+        input_auth.send_keys(tel)
+
     def attach_screenshot(self):
         allure.attach(self.driver.get_screenshot_as_png(),"скриншот", allure.attachment_type.PNG)
+
+
+
