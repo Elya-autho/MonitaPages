@@ -18,7 +18,8 @@ class ExceptionPageLocators:
     TABLE_HEAD = (By.XPATH, '// *[@class ="table-head-tr border-none"]')
     ADD_EXCEPTION_BUTTON =(By.XPATH, '//*[@class="promo-add-rule add-exclude"]')
     CHANGE_HISTORY_LINK = (By.XPATH, '//*[@class="change-history"]')
-
+    INPUT_PHONE = (By.CLASS_NAME,'login-phone-number')
+    SEND_BUTTON_NEXT = (By.XPATH, '//*[@class="login-phone-next"]')
 class ExceptionPageHelper(BasePage):
     def __init__(self, driver):
         self.driver = driver
@@ -40,5 +41,7 @@ class ExceptionPageHelper(BasePage):
         self.find_element(ExceptionPageLocators.TABLE_HEAD)
         self.find_element(ExceptionPageLocators.ADD_EXCEPTION_BUTTON)
         self.find_element(ExceptionPageLocators.CHANGE_HISTORY_LINK)
+        self.find_element(ExceptionPageLocators.INPUT_PHONE)
+        self.find_element(ExceptionPageLocators.SEND_BUTTON_NEXT)
 
 
