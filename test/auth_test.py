@@ -1,8 +1,7 @@
-import pytest
 import allure
-from base_test import browser
+from core.base_test import browser
 from pages.BasePage import BasePage
-from pages.ExceptionPage import ExceptionPageLocators
+from pages.LoginPage import LoginPageHelper
 import time
 
 
@@ -20,6 +19,6 @@ def test_get_url(browser):
     with allure.step("Открываем тестовую страницу"):
         base_page.get_url(BASE_URL)
 
-    with allure.step("Открываем тестовую страницу"):
-        base_page.auth(TEL)
+    with allure.step("Вводим номер телефона"):
+       LoginPageHelper.enter_phone(9085728301)
     time.sleep(10)
