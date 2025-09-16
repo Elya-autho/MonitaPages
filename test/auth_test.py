@@ -20,5 +20,16 @@ def test_get_url(browser):
         base_page.get_url(BASE_URL)
 
     with allure.step("Вводим номер телефона"):
-       LoginPageHelper.enter_phone(9085728301)
-    time.sleep(10)
+        input_phone = LoginPageHelper(browser)  # Создаем объект страницы
+        input_phone.enter_phone(TEL)
+        time.sleep(20)
+
+    with allure.step("Нажимаем на кнопку 'Далее'"):
+        send_ = LoginPageHelper(browser)  # Создаем объект страницы
+        send_.send_button_next()
+        time.sleep(20)
+
+    with allure.step("Вводим смс код"):
+        login_page = LoginPageHelper(browser)  # Создаем объект страницы
+        login_page.enter_phone(TEL)
+        time.sleep(20)
