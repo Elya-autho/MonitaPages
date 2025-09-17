@@ -2,7 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 import allure
 
-BASE_URL ="https://test.kb-monita.ru/#monitorings_exclude"
+BASE_URL ="https://test.kb-monita.ru/"
 
 
 
