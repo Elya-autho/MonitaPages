@@ -56,8 +56,11 @@ class LoginPageHelper(BasePage):
     def enter_sms_code(self, code):
         self.attach_screenshot()
         db = DatabaseConnections()
+        code = db.get_sms_code()
         sms_input = self.find_element(LoginPageLocators.INPUT_SMS_CODE)
         sms_input.send_keys(code)
+
+
 
 
     @allure.step("Нажимаем на кнопку 'Далее'")

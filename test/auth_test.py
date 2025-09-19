@@ -57,8 +57,9 @@ def test_input_sms_code(browser):
     with allure.step("Нажимаем на кнопку Далее"):
         send_next.send_button_next()
         time.sleep(20)
+    with allure.step("Создаем объект страницы"):
+        enter_sms_code = LoginPageHelper(browser)
     with allure.step("Вводим смс код"):
-        enter_sms_code = LoginPageHelper(browser)  # Создаем объект страницы
         enter_sms_code.enter_sms_code()
         time.sleep(10)
     with allure.step("Создаем объект страницы"):
